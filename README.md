@@ -4,3 +4,6 @@
 
 ## Day 02
 ### Operators
+
+## Day 03
+### Control Structures
