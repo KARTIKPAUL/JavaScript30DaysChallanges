@@ -10,3 +10,6 @@
 
 ## Day 04
 ### Loops
+
+## Day 05
+### Functions
