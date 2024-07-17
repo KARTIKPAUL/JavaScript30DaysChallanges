@@ -7,3 +7,6 @@
 
 ## Day 03
 ### Control Structures
+
+## Day 04
+### Loops
