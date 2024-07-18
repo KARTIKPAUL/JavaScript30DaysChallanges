@@ -13,3 +13,6 @@
 
 ## Day 05
 ### Functions
+
+## Day 06
+### Arrays
