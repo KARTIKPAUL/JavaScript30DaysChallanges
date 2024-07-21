@@ -1,0 +1,116 @@
+<!-- Day 09 -->
+<!-- DOM Manipulation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 09 || DOM Manipulation</title>
+</head>
+<body>
+   <div>
+    <!-- Activity 01 -->
+    <!-- task 01 -->
+     <h1 id="heading">Day 09</h1>
+     <!-- task 02 -->
+     <p class="para">DOM Manipulation</p>
+
+     <!-- task 04 -->
+      <ul id="unOrderList">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+      </ul>
+   </div> 
+
+   <!-- task 05 -->
+    <p id="deletingElement">This is Deleting Paragraph</p>
+    <!-- Tak 06 -->
+     <ul id="uList">
+        <li>Ami</li>
+        <li>Tumi</li>
+        <li>Ma</li>
+        <li>Baba</li>
+        <li>Vai</li>
+        <li>Bacha</li>
+     </ul>
+
+     
+     <!-- task 07 -->
+      <img id="pic" src="https://images.pexels.com/photos/18749534/pexels-photo-18749534/free-photo-of-man-in-tank-top-throwing-basketball-ball.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" alt="BasketBall">
+
+     <!-- task 08 -->
+      <p id="delElement">This is deleted HTML/CSS</p>
+
+      <!-- task 09 -->
+      <p id="changeText">This Text is Changable</p>
+      <button id="btn">Change</button>
+
+      <!-- task 10 -->
+       <p id="box">This is a box</p>
+
+
+   <script>
+    //Activity 01 => Selecting And Manipulating Elements
+    //task 01
+    let heading = document.getElementById('heading');
+    heading.textContent = 'Day Nine'
+    //task 02
+    let paras = document.getElementsByClassName('para');
+    for (const para of paras) {
+        para.style.backgroundColor='red'   
+    }
+
+
+    //Activity 02 => Creating And Appending Elements
+    //task 03
+    let newDiv = document.createElement('div');
+    newDiv.innerText = "This is Newly Created Div"
+    document.body.appendChild(newDiv);
+    //task 04
+    let unOrderList = document.getElementById('unOrderList');
+    let newList = document.createElement('li');
+    newList.innerText = 'Five';
+    unOrderList.appendChild(newList);
+
+
+    //Activity 03 => Removing Elements
+    //task 05
+    let deletingElement = document.getElementById('deletingElement');
+    document.body.removeChild(deletingElement);
+    //task 06
+    let uList = document.getElementById('uList');
+    uList.removeChild(uList.lastElementChild);
+
+
+    //Activity 04 => Modifying Attributes And Classes
+    //task 07
+    let pic = document.getElementById('pic');
+    pic.src='https://images.pexels.com/photos/4400679/pexels-photo-4400679.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load'
+    //task 08
+    let delElement = document.getElementById('delElement');
+    delElement.style.backgroundColor='green';
+    delElement.style.display = 'none';
+
+    
+    //Activity 05 => Event Handling
+    //task 09
+    let changeText = document.getElementById('changeText');
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click',()=>{
+        changeText.textContent = 'Text is Changed Successfully'
+    })
+    //task 10
+    let box = document.getElementById('box');
+    box.style.border = '2px solid black'
+    box.addEventListener('mouseover',()=>{
+        box.style.border = '10px solid black'
+    })
+    box.addEventListener('mouseout',()=>{
+        box.style.border = '2px solid black'
+    })
+   </script>
+</body>
+</html>

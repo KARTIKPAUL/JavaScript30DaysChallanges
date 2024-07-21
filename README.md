@@ -21,4 +21,7 @@
 ### Objects
 
 ## Day 08
-### ES6 + Features
+### ES6+ Features
+
+## Day 09
+### DOM Manipulation
