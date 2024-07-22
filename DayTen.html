@@ -1,0 +1,154 @@
+<!-- Day 10  -->
+<!-- Event Handling -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Activity 01 => Basic Event Handling  -->
+    <!-- task 01 -->
+     <p id="para1">This is Paragraph One</p>
+     <button id="btn1">BtnOne</button>
+     <!-- tak 02 -->
+     <img
+     id="pic"
+     src="https://images.pexels.com/photos/26997896/pexels-photo-26997896/free-photo-of-woman-in-t-shirt-and-skirt-walking-by-field-in-countryside.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
+     alt="pic"
+     />
+
+     <!-- Activity 02 -->
+     <!-- task 03 & 04  -->
+     <p id="box">This is a box</p>
+
+     <!-- Activity 03 -->
+     <!-- task 05 & 06 -->
+     <input type="text" name="names" id="inp" placeholder="Enter Text..">
+
+     <!-- Activity 04 -->
+     <!-- task 07 -->
+     <form action="" type="submit" id="myForm">
+        <input type="text" name="name" id="input" placeholder="Enter Your Name.....">
+        <button id="btn2">Submit</button>
+     </form>
+
+     <!-- task 08 -->
+     <select name="sel" id="mySelect">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+     </select>
+     <p id="para3"></p>
+
+     <!-- Activity 05 -->
+     <!-- task 09 -->
+     <ul id="uList">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+     </ul>
+
+     <!-- task 10 -->
+
+     <div id="container">
+     <input type="text" id="todo" placeholder="Enter Todo...">
+     </div>
+     <button id="btn3">Add Item</button>
+
+     <script>
+        //task 01
+        let para1 = document.getElementById('para1');
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', ()=>{
+            para1.textContent = 'This is changable First Para'
+        })
+        // task 02
+        let pic = document.getElementById("pic");
+
+        pic.addEventListener("dblclick", () => {
+        console.log("Clicked");
+        if (pic.style.display === "none") {
+            pic.style.display = "block";
+        } else pic.style.display = "none";
+        });
+
+        //Activity 02
+        //task 03
+        let box = document.getElementById('box');
+        box.style.border='10px solid black';
+        box.addEventListener('mouseover',()=>{
+            box.style.backgroundColor='red';
+        })
+        //task 04
+        box.addEventListener('mouseout',()=>{
+            box.style.backgroundColor='green';
+        })
+
+        //Activity 03
+        //task 05
+        let inp = document.getElementById('inp');
+        inp.addEventListener('keydown',(e)=>{
+            console.log(`Hello KeyDown is working Fine ${e.key}`);
+        })
+        //task 06
+        inp.addEventListener('keyup',()=>{
+            console.log(`Hello KeyUp is working Fine ${inp.value}`);
+        })
+
+        // Activity 04
+        //task 07
+        let input = document.getElementById('input');
+        let btn2 = document.getElementById('btn2');
+        let myForm = document.getElementById('myForm');
+
+        myForm.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            console.log(input.value);
+        })
+
+        //task 08
+
+        let mySelect = document.getElementById('mySelect');
+        let para3 = document.getElementById('para3');
+
+        mySelect.addEventListener('change',()=>{
+            para3.textContent = `Selected Value: ${mySelect.value}`;
+        })
+
+        //Activity 05
+        //task 09
+        let uList = document.getElementById('uList');
+        uList.addEventListener('click',(e) => {
+            e.preventDefault();
+            if(e.target && e.target.nodeName === 'LI'){
+                console.log(`Clicked Item is : ${e.target.textContent}`);
+            }
+        })
+
+        //task 10
+        let container = document.getElementById('container');
+        let btn3 = document.getElementById('btn3');
+        let todo = document.getElementById('todo');
+
+        // container.addEventListener('click',(e) => {
+        //     e.preventDefault();
+        //     if(e.target && e.target.nodeName === 'BUTTON'){
+        //         console.log(`Button Clicked : ${e.target.textContent}`);
+        //     }
+        // })
+
+        btn3.addEventListener('click',() => {
+            let list = document.createElement('li');
+            list.textContent = todo.value;
+            container.append(list);
+            todo.value = '';
+        })
+
+     </script>
+</body>
+</html>
+

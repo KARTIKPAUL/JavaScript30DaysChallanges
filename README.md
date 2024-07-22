@@ -25,3 +25,6 @@
 
 ## Day 09
 ### DOM Manipulation
+
+## Day 10
+### Event Handling
