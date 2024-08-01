@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsk 01 | Local Storage</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+    <script>
+        let key = 'name';
+        let myName = 'My Name is kartik Paul';
+
+        //Set the Value in localstorage
+        localStorage.setItem(name,myName);
+
+        //Get the Value from localstorage
+        const data = localStorage.getItem(name);
+        console.log(data);
+    </script>
+</body>
+</html>

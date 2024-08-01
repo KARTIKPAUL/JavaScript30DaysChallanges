@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05 | Session Storage</title>
+</head>
+<body>
+    <h1>Session Storage</h1>
+
+    <script>
+
+        let myName = 'KartikPaul';
+        let myHobby = 'My Hobby is Playing Football,Playing Cricket,Travel,Singing etc'
+
+        sessionStorage.setItem(myName,myHobby);
+
+        const ans = sessionStorage.getItem(myName);
+        console.log(ans);
+
+        
+
+    </script>  
+
+
+</body>
+</html>

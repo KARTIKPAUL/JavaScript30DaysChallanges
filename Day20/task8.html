@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 08 | Session Storage</title>
+</head>
+<body>
+    <h1>Session Storage Remove Test</h1>
+
+    <script>
+        function userData(){
+            console.log('Current Session Storage Item is :');
+            for(let i = 0 ; i < sessionStorage.length ; i++){
+                const idx = sessionStorage.key(i);
+                const val = sessionStorage.getItem(idx);
+                
+                console.log(`Key is: ${idx} And Value id: ${val}`);
+            }
+        }
+
+        sessionStorage.setItem('ami','amigo');
+        sessionStorage.setItem('tumi','tumigo');
+        sessionStorage.setItem('bacha','bachago');
+
+        console.log('Before Removal Item is: ');
+        userData();
+
+        sessionStorage.removeItem('ami');
+        console.log('After Removal Item is: ');
+        userData();
+
+    </script>
+
+</body>
+</html>

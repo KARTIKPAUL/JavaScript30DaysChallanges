@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 09 | Local & Session Storage</title>
+</head>
+<body>
+    <h1>Local & Session Storage</h1>
+    <script>
+
+        let myName = 'KartikPaul'
+        let myHobby = 'Playing Football , Playing Cricket , Singing , Travel'
+
+        localStorage.setItem(myName,myHobby);
+        sessionStorage.setItem(myName,myHobby);
+
+        let valueOfLocalStorage = localStorage.getItem(myName);
+        let valueOfSessionStorage = localStorage.getItem(myName);
+
+        console.log(valueOfLocalStorage);
+        console.log(valueOfSessionStorage);
+        
+        
+
+    </script>
+</body>
+</html>

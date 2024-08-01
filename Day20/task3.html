@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 03 | Local Storage</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.038);
+        }
+        h1{
+            text-align: center;
+        }
+        .fromContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            margin-top: 5px;
+            border-radius: 5px;
+            background-color: #59e959;
+            padding: 4px;
+        }
+        #btn:hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Form Submit | Local Storage</h1>
+
+    <div class="fromContainer">
+        <form id="userForm">
+
+            <div class="fromGroup">
+                <label for="name">Enter Your Name:</label>
+                <input type="text" name="name" id="name" required placeholder="Enter Your Name">
+            </div>
+
+            <div class="fromGroup">
+                <label for="email">Enter Your Email:</label>
+                <input type="email" name="email" id="email" required placeholder="Enter Your Email">
+            </div>
+
+            <div class="fromGroup">
+                <button type="submit" id="btn">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="displayData" id="displayData"></div>
+
+    <script>
+        function saveUserData(e){
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const userData = { name , email};
+            localStorage.setItem('userData',JSON.stringify(userData));
+            saveData();
+        }
+
+        function saveData(){
+            const saveDatas = localStorage.getItem('userData');
+            if(saveDatas){
+                const userData = JSON.parse(saveDatas);
+                const displayData = document.getElementById('displayData');
+
+                displayData.innerHTML = `
+                <h3>Data saved</h3>
+                <p><strong>Name: </strong>${userData.name}</p>
+                <p><strong>Email: </strong>${userData.email}</p>
+                `
+            }
+        }
+
+        document.getElementById('userForm').addEventListener('submit',saveUserData);
+
+        window.addEventListener('load',saveData);
+
+    </script>
+</body>
+</html>
