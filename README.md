@@ -58,3 +58,6 @@
 
 ## Day 20
 ### Local Storage And SessionStorage
+
+## Day 21
+### Leetcode Easy
