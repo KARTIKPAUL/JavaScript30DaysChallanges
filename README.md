@@ -61,3 +61,9 @@
 
 ## Day 21
 ### Leetcode Easy
+
+## Day 22
+### Leetcode Medium
+
+## Day 23
+### Leetcode Hard
