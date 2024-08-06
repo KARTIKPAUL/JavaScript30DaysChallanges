@@ -67,3 +67,9 @@
 
 ## Day 23
 ### Leetcode Hard
+
+## Day 24
+### Weather App
+
+## Day 25
+### Movie Search App
