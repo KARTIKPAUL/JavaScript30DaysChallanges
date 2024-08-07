@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
-            background-color:#eeee52;
+        body {
+            background-color: #eeee52;
         }
-        h1{
+        h1 {
             text-align: center;
             color: #0a29f3;
         }
-        #msg1{
+        #msg1 {
             margin-left: 10px;
             margin-top: 20px;
             padding-left: 10px;
@@ -26,7 +26,7 @@
             border-radius: 2px;
             font-size: x-large;
         }
-        #btn1{
+        #btn1 {
             margin-top: 20px;
             padding: 5px;
             margin-left: 10px;
@@ -35,8 +35,33 @@
             cursor: pointer;
             background-color: #3be33b;
         }
-        #btn1:hover{
+        #btn1:hover {
             background-color: #0abe0a;
+        }
+        #messages {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 60%;
+            word-wrap: break-word;
+            font-size: large;
+        }
+        .user-message {
+            background-color: #ffffff;
+            color: #000000;
+            align-self: flex-end;
+            margin-left: auto;
+            text-align: right;
+        }
+        .server-message {
+            background-color: #0abe0a;
+            color: black;
+            align-self: flex-start;
+            text-align: left;
         }
     </style>
 </head>
@@ -49,23 +74,27 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
-        let btn1 = document.getElementById('btn1');
-        let msg1 = document.getElementById('msg1');
-        const allMessages = document.getElementById('messages')
+        const btn1 = document.getElementById('btn1');
+        const msg1 = document.getElementById('msg1');
+        const allMessages = document.getElementById('messages');
 
         socket.on('message', (message) => {
             const p = document.createElement('p');
             p.innerText = message;
+            p.classList.add('message', 'server-message');
             allMessages.appendChild(p);
         });
 
-        btn1.addEventListener('click',(e) => {
+        btn1.addEventListener('click', (e) => {
             e.preventDefault();
             const message = msg1.value;
-            socket.emit('userMessage',message);
+            socket.emit('userMessage', message);
+            const p = document.createElement('p');
+            p.innerText = message;
+            p.classList.add('message', 'user-message');
+            allMessages.appendChild(p);
             msg1.value = "";
-        })
-
+        });
     </script>
 </body>
 </html>

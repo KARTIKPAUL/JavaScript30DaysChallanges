@@ -11,7 +11,7 @@ const io = new Server(server);
 io.on('connection',(socket) => {
     socket.on('userMessage' , (message) => {
         //console.log(`A new User Message ${message}`);
-        io.emit('message',message);
+        socket.broadcast.emit('message',message);
     });
 })
 
