@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:#eeee52;
+        }
+        h1{
+            text-align: center;
+            color: #0a29f3;
+        }
+        #msg1{
+            margin-left: 10px;
+            margin-top: 20px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 2px;
+            font-size: x-large;
+        }
+        #btn1{
+            margin-top: 20px;
+            padding: 5px;
+            margin-left: 10px;
+            border-radius: 2px;
+            font-size: x-large;
+            cursor: pointer;
+            background-color: #3be33b;
+        }
+        #btn1:hover{
+            background-color: #0abe0a;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat App</h1>
+    <input type="text" placeholder="Enter Message ..." id="msg1">
+    <button id="btn1">Send</button>
+    <div id="messages"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        let btn1 = document.getElementById('btn1');
+        let msg1 = document.getElementById('msg1');
+        const allMessages = document.getElementById('messages')
+
+        socket.on('message', (message) => {
+            const p = document.createElement('p');
+            p.innerText = message;
+            allMessages.appendChild(p);
+        });
+
+        btn1.addEventListener('click',(e) => {
+            e.preventDefault();
+            const message = msg1.value;
+            socket.emit('userMessage',message);
+            msg1.value = "";
+        })
+
+    </script>
+</body>
+</html>
