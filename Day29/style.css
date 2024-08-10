@@ -1,0 +1,109 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+h1, h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, button:focus {
+    outline: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background-color: #ff7e5f;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #feb47b;
+}
+
+#login-form, #dashboard {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+}
+
+#dashboard h1 {
+    margin-bottom: 20px;
+}
+
+#post-form {
+    margin-bottom: 20px;
+}
+
+#post-feed .post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#post-feed .post p {
+    margin: 10px 0;
+    color: #555;
+}
+
+#post-feed .post .actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#post-feed .post .actions button {
+    background-color: transparent;
+    color: #ff7e5f;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#post-feed .post .actions button:hover {
+    color: #feb47b;
+}
+
+#post-feed .post .actions span {
+    color: #333;
+    font-weight: 600;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+@media (max-width: 500px) {
+    #login-form, #dashboard {
+        max-width: 90%;
+    }
+}
+

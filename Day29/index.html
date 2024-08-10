@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="dashboard" style="display:none;">
+        <h1>Welcome, <span id="user-name"></span></h1>
+        <form id="post-form">
+            <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+            <button type="submit">Post</button>
+        </form>
+        <div id="post-feed"></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
