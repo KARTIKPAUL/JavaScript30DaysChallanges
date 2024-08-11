@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar for user information -->
+        <aside id="user-info">
+            <!-- Login form -->
+            <form id="login-form">
+                <h2>Login</h2>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- User profile details -->
+            <div id="profile" style="display:none;">
+                <h2>User Profile</h2>
+                <p>Email: <span id="user-email"></span></p>
+            </div>
+        </aside>
+
+        <!-- Main content area -->
+        <main id="content">
+            <!-- Form for creating posts -->
+            <section id="create-post" style="display:none;">
+                <form id="post-form">
+                    <textarea id="post-content" placeholder="What's on your mind?" required></textarea>
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+
+            <!-- Feed for displaying posts -->
+            <section id="feed">
+                <!-- Posts will be displayed here -->
+            </section>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
